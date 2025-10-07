@@ -44,19 +44,11 @@ class CellContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dowLabel = DateFormat.EEEE(locale).format(day);
-    final dayLabel = DateFormat.yMMMMd(locale).format(day);
-    final semanticsLabel = '$dowLabel, $dayLabel';
-
     Widget? cell =
         calendarBuilders.prioritizedBuilder?.call(context, day, focusedDay);
 
     if (cell != null) {
-      return Semantics(
-        label: semanticsLabel,
-        excludeSemantics: true,
-        child: cell,
-      );
+      return cell;
     }
 
     final text =
@@ -167,10 +159,6 @@ class CellContent extends StatelessWidget {
           );
     }
 
-    return Semantics(
-      label: semanticsLabel,
-      excludeSemantics: true,
-      child: cell,
-    );
+    return cell;
   }
 }

@@ -1,3 +1,10 @@
 {
     "dart.lineLength": 80,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#00000000",
+        "activityBar.background": "#48155C",
+        "titleBar.activeBackground": "#651E81",
+        "titleBar.activeForeground": "#FCF9FE"
+    },
+    "gitConfigUser.selectedProfile": "Work",
 }
