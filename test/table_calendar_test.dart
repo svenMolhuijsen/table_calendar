@@ -468,7 +468,7 @@ void main() {
           setupTestWidget(
             TableCalendar(
               focusedDay: initialFocusedDay,
-              loadEventsForDisabledDays: true,
+              // loadEventsForDisabledDays: true, // Parameter removed
               firstDay: firstDay,
               lastDay: lastDay,
               currentDay: today,

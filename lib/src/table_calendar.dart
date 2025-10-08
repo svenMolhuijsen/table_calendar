@@ -549,6 +549,20 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
               if (isOutside && _shouldBlockOutsideDays) {
                 return Container();
               }
+              
+              // For outside days, exclude semantics at the table_calendar level
+              // All semantics should be handled in the calendar_item builders
+              if (isOutside) {
+                return ExcludeSemantics(
+                  child: GestureDetector(
+                    behavior: widget.dayHitTestBehavior,
+                    onTap: () => _onDayTapped(day),
+                    onLongPress: () => _onDayLongPressed(day),
+                    child: _buildCell(day, focusedMonth),
+                  ),
+                );
+              }
+              
               return GestureDetector(
                 behavior: widget.dayHitTestBehavior,
                 onTap: () => _onDayTapped(day),
